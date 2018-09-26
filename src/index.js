@@ -4,28 +4,27 @@ module.exports = function makeExchange(currency) {
     else {
         let h = 0, q = 0, d = 0, n = 0, p = 0;
         let result = {};
-        let temp = currency;
-        h = Math.floor(temp / 50);
+        h = Math.floor(currency / 50);
         if (h > 0) {
-            temp = temp - h * 50;
+            currency = currency - h * 50;
             result.H = h;
         }
-        q = Math.floor(temp / 25);
+        q = Math.floor(currency / 25);
         if (q > 0) {
-            temp = temp - q * 25;
+            currency = currency - q * 25;
             result.Q = q;
         }
-        d = Math.floor(temp / 10);
+        d = Math.floor(currency / 10);
         if (d > 0) {
-            temp = temp - d * 10;
+            currency = currency - d * 10;
             result.D = d;
         }
-        n = Math.floor(temp / 5);
+        n = Math.floor(currency / 5);
         if (n > 0) {
-            temp = temp - n * 5;
+            currency = currency - n * 5;
             result.N = n;
         }
-        p = Math.floor(temp / 1);
+        p = Math.floor(currency / 1);
         if (p > 0)
             result.P = p;
         return result;
